@@ -1,0 +1,32 @@
+table{
+    background-color: white;
+    text-align: center;
+    width: 85%;
+   
+    margin: 100px;
+    border-radius: 2px;
+    font-size: 1.5em;
+}
+tr,td{
+    border-radius: 5px;
+    
+}
+#samain-container{
+    margin: 100px;
+    width: 600px;
+}
+
+body{
+    background-color: #256999;
+    font-family: Arial;
+    text-align: center;
+}
+thead{
+    
+    background-color: #E34242;
+    color: white;
+    font-size: 100%;
+}
+tr:nth-child(even){
+    background-color: #ccc;
+}

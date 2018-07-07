@@ -1,0 +1,141 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <link rel="stylesheet" href="estilos/style_modal.css">
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="jquery.js"></script>
+        <script>
+            function registraralumnonuevo(){
+                cod=document.getElementById("codigoalu").value;
+                nom=document.getElementById("nombrealu").value;
+                apel=document.getElementById("apellidoalu").value;
+                dni=document.getElementById("dnialu").value;
+                dir=document.getElementById("direccion").value;
+                telf=document.getElementById("telefonoalu").value;
+                cor=document.getElementById("correoalu").value;
+                ci=document.getElementById("ciclo").value;
+                pon=document.getElementById("ponderado").value;
+                $.ajax({
+                    data:{ cod_alu:cod,nomb_alu:nom,apel_alu:apel,
+                        dni_alu:dni,dir_alu:dir,telf_alu:telf,
+                        cor_alu:cor,ciclo_alu:ci,pond_alu:pon},
+                    type: 'POST',
+                    url: "registra_alumnno.jsp",
+                    success: function (response) {
+                        mostrarAlumnos();
+                    }
+                });
+            }
+            function mostrarAlumnos(){
+                $.ajax({
+                    type: 'POST',
+                    url: "mostrarAlumno.jsp",
+                    success: function (data) {
+                       document.getElementById("muestraalumno").innerHTML=data;
+                    }
+                });
+            }
+            </script>
+    </head>
+    <body>
+        <div id="menuprinicpal">
+            <center><a>
+                    <label for="ActivaVentana" id="Abremodal">REGISTRAR</label></a>
+                    <a href="nmodal.html" id="1234" style="text-decoration:none"><label for="1234" id="Abremodal">ACTUALIZAR</label></a>
+                    <a><label for="ActivaVentana" id="Abremodal">MODIFICAR</label></a>
+                    <a><label for="ActivaVentana" id="Abremodal">ELIMINAR</label></a>
+                    
+                    <a href="index.html" id="123" style="text-decoration:none"><label for="123" id="Abremodal">CERRAR SESIÓN</label></a>
+            </center>
+           <input type="checkbox" name="ActivaVentana" id="ActivaVentana">
+           <input type="checkbox" name="ActivaVentana" id="ActivaVentana">
+           <input type="checkbox" name="ActivaVentana" id="ActivaVentana">
+           
+           
+           
+
+        <div class="VentModal">
+            <label for="ActivaVentana" id="Cierramodal" ><i class="fa fa-times" aria-hidden="true"></i>
+            </label>
+        <div class="Contenido">
+                <div id="menu">
+                    <ul>
+                        <li><b><a>REGISTRO ALUMNO</a></b></li>
+                    </ul>
+                </div>
+	
+		<form  id="form_register">
+			<div class="columns">
+                        <div class="field-container">
+                        <p> Código*</p>
+                        <i class="fa fa-keyboard-o" aria-hidden="true"></i>
+                        <input type="text" class="field" placeholder="código" id="codigoalu" > <br/>
+                        </div>
+                        <div class="field-container">
+                        <p> Nombre*</p>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        <input type="text" class="field" placeholder="nombre" id="nombrealu"> <br/>
+                        </div>
+			</div>
+                        <div class="columns">
+                        <div class="field-container">
+                        <p> Apellido*</p>
+                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                        <input type="text" class="field" placeholder="apellido" id="apellidoalu"> <br/>
+                        </div>
+                        <div class="field-container">
+                        <p> Documento DNI*</p>
+                        <i class="fa fa-id-card" aria-hidden="true"></i>
+                        <input type="text" class="field" placeholder="########" id="dnialu"> <br/>
+                        </div>
+			</div>
+			<p> Dirección*</p>
+			<div class="field-container">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                        <input type="text" class="field" placeholder="asoc,urb,mz,lote,distrito" id="direccion"> <br/>
+			</div>
+                        <p> Teléfono*</p>
+			<div class="field-container">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <input type="text" class="field" placeholder="#########" id="telefonoalu"> <br/>
+			</div>
+			<p> Correo Electrónico*</p>
+			<div class="field-container">
+                            <i class="fa fa-envelope" aria-hidden="true">
+                                
+                            </i><input type="email" class="field" placeholder="user@example.com" id="correoalu"> <br/>
+			</div>
+                        <div class="columns">
+                        <div class="field-container">
+                        <p> Ciclo*</p>
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                        <input type="text" class="field" placeholder=" --- " id="ciclo"> <br/>
+                        </div>
+                        <div class="field-container">
+                        <p> Ponderado*</p>
+                        <i class="fa fa-address-book" aria-hidden="true">
+                            
+                        </i><input type="text" class="field" placeholder=" -- " id="ponderado"> <br/>
+                        </div>
+			</div>
+			<p class="center-content">
+                            <input type="button" class="btn btn-red" value="Registrar" onclick="registraralumnonuevo()">
+			</p>
+                        <p class="center-content">
+                            <input type="reset" class="btn btn-green" value="Limpiar Campos" >
+			</p>
+                    </form> 
+        </div>
+        </div> 
+        </div>
+       
+        <div id="muestraalumno">
+            </div>
+            <script>
+                mostrarAlumnos();
+            </script>
+    </body>
+</html>
