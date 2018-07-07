@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <title>Sowad</title>
+        <link rel="stylesheet" type="text/css" href="estilos/style_logeo.css">
+        <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="jquery.js"></script>
+        <script>
+            function registraadmin(){
+                id=document.getElementById("usuario").value;
+                nomb=document.getElementById("nombre").value;
+                ape=document.getElementById("apellido").value;
+                dn=document.getElementById("dni").value;
+                pass=document.getElementById("password").value;
+                conf=document.getElementById("confirma").value;
+                corr=document.getElementById("correo").value;
+                te=document.getElementById("telefono").value;
+                $.ajax({
+                    data:{id_log:id,nomb_log:nomb,ape_log:ape,
+                        dni_log:dn,pass_log:pass,conf_pass_log:conf,
+                        correo_log:corr,telf_log:te},
+                    type: 'POST',
+                    url: "registra.jsp",
+                    success: function (data) {
+                        validar();
+                    }
+                });
+            }
+            function validar(){
+                var text='REGISTRADO';
+                alert(text); 
+                
+            }
+            </script>
+        
+            <script>
+            $(        
+            function(){
+            $("#menu li").on("click", function(){
+                var i = $(this).index();
+                $("#formulariosnilton form").hide();
+                $("#formulariosnilton form").eq(i).show();
+                $("#menu li a").removeClass("active");
+                $(this).find("a").addClass("active");
+            });
+        });
+        </script>
+    </head>
+    <body>
+        
+        <div id="menu">
+            <ul>
+                <li><b><a href="#" class="active" style="color:#999" >INICIAR SESIÓN</a></b></li>
+                <li><b><a href="#" style="color:#999">REGISTRARSE</a></b></li>
+        </ul>
+        </div>
+        <div id="formulariosnilton">
+            <!-- INICIAR SESION   -->
+            <center>
+                <form action="login.jsp" id="form_session">
+                
+                <p>Usuario:</p>
+            <div class="field-container">
+                <i class="fa fa-address-card" aria-hidden="true"></i>  
+                <input type="text" class="field" name="txtusuario" placeholder="user"> <br/>
+            </div>
+
+            <p>Contraseña:</p>
+            <div class="field-container">
+                <i class="fa fa-key fa-lg" aria-hidden="true"></i>  
+                <input type="password" class="field" name="txtcontra" placeholder="*******"> <br/>
+            </div>
+            <p class="center-content">
+                <input type="submit" name="btningresar" class="btn btn-green" value="INICIAR SESIÓN"> <br/><br/>
+            </p>
+            </form>
+            </center>
+            <!-- REGISTRAR -->
+            
+            <form action="" id="form_register">
+                <div class="columns">  
+                <div class="field-container">
+                <p>Nombre</p>
+                <i class="fa fa-address-book" aria-hidden="true" ></i>
+                <input type="text" class="field" id="nombre" placeholder="name">
+                </div>
+                    
+                <div class="field-container">
+                <p>Apellido</p>
+                <i class="fa fa-address-book" aria-hidden="true"></i>
+                <input type="text" class="field"  id="apellido" placeholder="last name">
+                </div>
+                </div>
+             
+              
+              <div class="columns">
+                <div class="field-container">
+                <p>DNI</p>
+                <i class="fa fa-id-card" aria-hidden="true"></i>
+                <input type="text" class="field" id="dni" placeholder="dni" >
+                </div>
+                   <div class="field-container">
+                <p>Usuario</p>
+                <i class="fa fa-user" aria-hidden="true"></i>
+                <input type="text" class="field"  id="usuario" placeholder="user">
+                </div>
+              </div>
+              
+              
+                <div class="columns">
+                <div class="field-container">
+                <p>Contraseña</p>
+                <i class="fa fa-key fa-lg"></i>
+                <input type="password" class="field" id="password" placeholder="********">
+                </div>
+
+                <div class="field-container">
+                <p>Confirma Contraseña</p>
+                <i class="fa fa-check" aria-hidden="true"></i>
+                <input type="password" class="field" id="confirma" placeholder="********" >
+                </div>
+                </div>
+                 <div class="columns">
+                                  <div class="field-container">
+                    <p>Correo Electrónico</p>
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <input type="email" class="field" id="correo" placeholder="user@example" >
+                </div>
+                
+                <div class="field-container">
+                    <p>Teléfono</p>
+                <i class="fa fa-phone-square" aria-hidden="true" ></i>
+                <input type="text" class="field" id="telefono" placeholder="#########">
+                </div>
+              </div>
+                <p class="center-contenet">
+                    <input type="button" class="btn btn-red"  value="CREAR CUENTA" onclick="registraadmin()"> 
+                    <input type="submit" class="btn btn-green"  value="LIMPIAR CAMPOS" > 
+                </p> 
+               
+            </form>
+        </div>    
+    </body>
+</html>

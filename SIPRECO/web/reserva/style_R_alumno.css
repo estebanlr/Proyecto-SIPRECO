@@ -1,0 +1,168 @@
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body{
+	background: #18A383;
+        font-family: Arial
+}
+
+header{
+	width: 100%;
+}
+
+.navegacion{
+	width: 1000px;
+	margin: 30px auto;
+	background: #ccc;
+}
+
+.navegacion ul{
+	list-style: none;
+}
+
+.menu > li{
+	position: relative;
+	display: inline-block;
+}
+
+.menu > li > a{
+	display: block;
+	padding: 15px 20px;
+	color: #256999;
+	
+	text-decoration: none;
+}
+
+.menu li a:hover{
+	color: #18A383;
+	transition: all .3s;
+}
+
+/* Submenu*/
+
+.submenu{
+	position: absolute;
+	background: #256999;
+	width: 110%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1.5s;
+        text-align: center;
+}
+
+.submenu li a{
+	display: block;
+	padding: 15px;
+	color: #fff;
+	
+	text-decoration: none;
+}
+
+.menu li:hover .submenu{
+	visibility: visible;
+	opacity: 1;
+}
+.submenu1{
+	position: absolute;
+	background: #256999;
+	width: 100%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1.5s;
+        text-align: center;
+}
+
+.submenu1 li a{
+	display: block;
+	padding: 15px;
+	color: #fff;
+	
+	text-decoration: none;
+}
+
+.menu li:hover .submenu1{
+	visibility: visible;
+	opacity: 1;
+}
+.submenu2{
+	position: absolute;
+	background: #256999;
+	width: 100%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1.5s;
+        text-align: center;
+}
+
+.submenu2 li a{
+	display: block;
+	padding: 15px;
+	color: #fff;
+	
+	text-decoration: none;
+}
+
+.menu li:hover .submenu2{
+	visibility: visible;
+	opacity: 1;
+}
+.submenu3{
+	position: absolute;
+	background: #256999;
+	width: 105%;
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1.5s;
+        text-align: center;
+}
+
+.submenu3 li a{
+	display: block;
+	padding: 15px;
+	color: #fff;
+	
+	text-decoration: none;
+}
+
+.menu li:hover .submenu3{
+	visibility: visible;
+	opacity: 1;
+}
+.item-r{
+            float: right;
+    }
+    
+.field-container div{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .field-container i{
+        background-color: #eee;
+        border-radius: 4px 0 0 4px; 
+        color: #888;
+        padding: 10px 10px 11px 10px;
+        border: solid 1px #ccc;
+        max-height: 35px;
+        margin-right: -5px;
+        vertical-align: top;
+    }  
+    
+.field{
+        border: solid 1px #ccc;
+        border-radius: 0 4px 4px 0; 
+        padding: 10px;
+        width: 240px;
+}
+.field:focus{
+        border-color: #18A383;
+}
+input{
+        border: 0;
+        outline: none;
+        width: 280px;
+}
